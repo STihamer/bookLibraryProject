@@ -121,6 +121,9 @@ export class BooksComponent {
         'In this book you will read and learn the fundamentals of Design. After reading this book you can feel confident to continue working with UX Tools and design complex applications.',
     },
   ];
+
+  newBooklist: any[] = [];
+
   //getteres
   getTotalBooks() {
     return this.books.length;
@@ -143,10 +146,14 @@ export class BooksComponent {
   // properties
 
   bookCountRadioButton: string = 'All';
-
+  searchText: string = '';
   //methods
 
   onFilterRadioButtonChanged(data: string) {
     this.bookCountRadioButton = data;
+  }
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
   }
 }
